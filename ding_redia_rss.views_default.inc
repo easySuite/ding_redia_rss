@@ -160,24 +160,6 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_list_image_1']['settings'] = array(
     'image_style' => 'medium',
   );
-  /* Field: Scheduler: Publish on */
-  $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
-  $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
-  $handler->display->display_options['fields']['publish_on']['label'] = '';
-  $handler->display->display_options['fields']['publish_on']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['publish_on']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['publish_on']['custom_date_format'] = 'U';
-  $handler->display->display_options['fields']['publish_on']['timezone'] = 'UTC';
-  /* Field: Scheduler: Unpublish on */
-  $handler->display->display_options['fields']['unpublish_on']['id'] = 'unpublish_on';
-  $handler->display->display_options['fields']['unpublish_on']['table'] = 'scheduler';
-  $handler->display->display_options['fields']['unpublish_on']['field'] = 'unpublish_on';
-  $handler->display->display_options['fields']['unpublish_on']['label'] = '';
-  $handler->display->display_options['fields']['unpublish_on']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['unpublish_on']['custom_date_format'] = 'U';
-  $handler->display->display_options['fields']['unpublish_on']['timezone'] = 'UTC';
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -240,8 +222,8 @@ function ding_redia_rss_views_default_views() {
         'subheadline' => 'field_ding_event_lead',
         'arrangement-starttime' => 'field_ding_event_date',
         'arrangement-endtime' => 'field_ding_event_date_1',
-        'display-starttime' => 'publish_on',
-        'display-endtime' => 'unpublish_on',
+        'display-starttime' => '',
+        'display-endtime' => '',
         'arrangement-location' => 'field_ding_event_location',
         'arrangement-price' => 'field_ding_event_price',
         'resources' => 'nid',
@@ -308,8 +290,8 @@ function ding_redia_rss_views_default_views() {
         'subheadline' => 'field_ding_event_lead',
         'arrangement-starttime' => 'field_ding_event_date',
         'arrangement-endtime' => 'field_ding_event_date_1',
-        'display-starttime' => 'field_ding_event_date',
-        'display-endtime' => 'field_ding_event_date_1',
+        'display-starttime' => '',
+        'display-endtime' => '',
         'arrangement-location' => 'field_ding_event_location',
         'arrangement-price' => 'field_ding_event_price',
         'resources' => 'nid',
@@ -567,8 +549,8 @@ function ding_redia_rss_views_default_views() {
         'subheadline' => 'field_ding_news_lead',
         'arrangement-starttime' => '',
         'arrangement-endtime' => '',
-        'display-starttime' => 'publish_on',
-        'display-endtime' => 'unpublish_on',
+        'display-starttime' => '',
+        'display-endtime' => '',
         'arrangement-location' => '',
         'arrangement-price' => '',
         'resources' => 'nid',
@@ -635,8 +617,8 @@ function ding_redia_rss_views_default_views() {
         'subheadline' => 'field_ding_news_lead',
         'arrangement-starttime' => '',
         'arrangement-endtime' => '',
-        'display-starttime' => 'publish_on',
-        'display-endtime' => 'unpublish_on',
+        'display-starttime' => '',
+        'display-endtime' => '',
         'arrangement-location' => '',
         'arrangement-price' => '',
         'resources' => 'nid',

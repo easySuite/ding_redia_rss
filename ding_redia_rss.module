@@ -57,6 +57,7 @@ function ding_redia_rss_field_formatter_view($entity_type, $entity, $field, $ins
         );
       }
       break;
+
     case 'ding_redia_rss_location':
       foreach ($items as $delta => $item) {
         foreach ($item as $part) {
@@ -169,7 +170,7 @@ function ding_redia_rss_preprocess_item_resources(&$variables) {
       // Redia format.
       $id_parts = explode(':', $ting_object->id);
       $faust_number = end($id_parts);
-      
+
       $value[] = array(
         // This must be the name of the tag wrapping each value.
         'key' => 'redia-rss:resource',
