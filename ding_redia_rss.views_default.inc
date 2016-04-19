@@ -202,12 +202,6 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['filters']['field_ding_event_date_value_1']['field'] = 'field_ding_event_date_value';
   $handler->display->display_options['filters']['field_ding_event_date_value_1']['operator'] = '<=';
   $handler->display->display_options['filters']['field_ding_event_date_value_1']['default_date'] = '+180 day';
-  /* Filter criterion: Flags: Flagged */
-  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
-  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
-  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['filters']['flagged']['value'] = '1';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed');
@@ -302,18 +296,6 @@ function ding_redia_rss_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['item'] = array(
-    'redia-rss' => array(
-      'ding_redia_rss' => array(
-        'subheadline' => 'field_ding_event_lead',
-        'arrangement-starttime' => 'field_ding_event_date',
-        'arrangement-endtime' => 'field_ding_event_date_1',
-        'display-starttime' => '',
-        'display-endtime' => '',
-        'arrangement-location' => 'field_ding_event_location',
-        'arrangement-price' => 'field_ding_event_price',
-        'resources' => 'nid',
-      ),
-    ),
     'core' => array(
       'views_rss_core' => array(
         'title' => 'title',
@@ -335,6 +317,18 @@ function ding_redia_rss_views_default_views() {
         'keywords' => '',
         'thumbnail' => 'field_ding_event_list_image_1',
         'category' => '',
+      ),
+    ),
+    'redia-rss' => array(
+      'ding_redia_rss' => array(
+        'subheadline' => 'field_ding_event_lead',
+        'arrangement-starttime' => 'field_ding_event_date',
+        'arrangement-endtime' => 'field_ding_event_date_1',
+        'display-starttime' => '',
+        'display-endtime' => '',
+        'arrangement-location' => 'field_ding_event_location',
+        'arrangement-price' => 'field_ding_event_price',
+        'resources' => 'nid',
       ),
     ),
   );

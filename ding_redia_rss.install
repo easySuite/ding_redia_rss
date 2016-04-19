@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Handle module updates.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ding_redia_rss_install() {
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'ding_redia_rss', '=')
+    ->execute();
+}
+
+/**
+ * Update module weight.
+ */
+function ding_redia_rss_update_7001(&$sandbox) {
+  ding_redia_rss_install();
+}
