@@ -160,11 +160,10 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_list_image_1']['settings'] = array(
     'image_style' => 'medium',
   );
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Content: Date -  start date (field_ding_event_date) */
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['field'] = 'field_ding_event_date_value';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -190,6 +189,24 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['filters']['publish_on']['field'] = 'publish_on';
   $handler->display->display_options['filters']['publish_on']['operator'] = 'not empty';
   $handler->display->display_options['filters']['publish_on']['group'] = 2;
+  /* Filter criterion: Content: Date -  start date (field_ding_event_date) */
+  $handler->display->display_options['filters']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
+  $handler->display->display_options['filters']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
+  $handler->display->display_options['filters']['field_ding_event_date_value']['field'] = 'field_ding_event_date_value';
+  $handler->display->display_options['filters']['field_ding_event_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_ding_event_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Date -  start date (field_ding_event_date) */
+  $handler->display->display_options['filters']['field_ding_event_date_value_1']['id'] = 'field_ding_event_date_value_1';
+  $handler->display->display_options['filters']['field_ding_event_date_value_1']['table'] = 'field_data_field_ding_event_date';
+  $handler->display->display_options['filters']['field_ding_event_date_value_1']['field'] = 'field_ding_event_date_value';
+  $handler->display->display_options['filters']['field_ding_event_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_ding_event_date_value_1']['default_date'] = '+180 day';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed');
@@ -261,8 +278,7 @@ function ding_redia_rss_views_default_views() {
 
   /* Display: App Feed */
   $handler = $view->new_display('feed', 'App Feed', 'feed_app');
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss_fields';
   $handler->display->display_options['style_options']['channel'] = array(
@@ -307,7 +323,7 @@ function ding_redia_rss_views_default_views() {
         'comments' => '',
         'enclosure' => '',
         'guid' => 'nid',
-        'pubDate' => 'created',
+        'pubDate' => 'field_ding_event_date',
       ),
     ),
     'media' => array(
@@ -517,6 +533,12 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['filters']['publish_on']['field'] = 'publish_on';
   $handler->display->display_options['filters']['publish_on']['operator'] = 'not empty';
   $handler->display->display_options['filters']['publish_on']['group'] = 2;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed');
