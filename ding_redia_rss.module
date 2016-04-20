@@ -67,9 +67,6 @@ function ding_redia_rss_field_formatter_view($entity_type, $entity, $field, $ins
               $location[] = $part;
             }
           }
-          $element[$delta] = array(
-            '#markup' => implode(', ', array_reverse($location)),
-          );
         }
         else {
           // Try to get library title as location.
