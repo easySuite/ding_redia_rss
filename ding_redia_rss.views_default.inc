@@ -126,7 +126,7 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_body']['field'] = 'field_ding_event_body';
   $handler->display->display_options['fields']['field_ding_event_body']['label'] = '';
   $handler->display->display_options['fields']['field_ding_event_body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_ding_event_body']['alter']['preserve_tags'] = '<a><b><em><u><i><li><ul><ol><h2><h3><strong><p><br/>';
+  $handler->display->display_options['fields']['field_ding_event_body']['alter']['preserve_tags'] = '<a><b><em><u><i><li><ul><ol><h2><h3><strong><p><br/><br><br />';
   $handler->display->display_options['fields']['field_ding_event_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_event_body']['element_default_classes'] = FALSE;
   /* Field: Indhold: List image (content) */
@@ -429,7 +429,7 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['field_ding_news_body']['field'] = 'field_ding_news_body';
   $handler->display->display_options['fields']['field_ding_news_body']['label'] = '';
   $handler->display->display_options['fields']['field_ding_news_body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_ding_news_body']['alter']['preserve_tags'] = '<a><b><em><u><i><li><ul><ol><h2><h3><strong><p><br/>';
+  $handler->display->display_options['fields']['field_ding_news_body']['alter']['preserve_tags'] = '<a><b><em><u><i><li><ul><ol><h2><h3><strong><p><br/><br><br />';
   $handler->display->display_options['fields']['field_ding_news_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_news_body']['element_default_classes'] = FALSE;
   /* Field: Content: Nid */
