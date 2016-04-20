@@ -53,7 +53,7 @@ function ding_redia_rss_field_formatter_view($entity_type, $entity, $field, $ins
     case 'ding_redia_rss_date_time':
       foreach ($items as $delta => $item) {
         $element[$delta] = array(
-          '#markup' => strtotime($item[$display['settings']['fromto']]),
+          '#markup' => strtotime($item[$display['settings']['fromto']] . ' ' . $item['timezone_db']),
         );
       }
       break;
