@@ -20,3 +20,18 @@ function ding_redia_rss_install() {
 function ding_redia_rss_update_7001(&$sandbox) {
   ding_redia_rss_install();
 }
+
+/**
+ * Remove old non-global flags.
+ */
+function ding_redia_rss_update_7002(&$sandbox) {
+  db_query("DELETE fc FROM flag_content fc
+      JOIN node n ON n.nid = fc.content_id
+      WHERE n.type = 'ding_news' and fc.fid = 3")
+    ->execute();
+
+  db_query("DELETE fc FROM flag_counts fc
+      JOIN node n ON n.nid = fc.content_id
+      WHERE n.type = 'ding_news' and fc.fid = 3")
+    ->execute();
+}
