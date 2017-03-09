@@ -178,6 +178,18 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'custom';
   $handler->display->display_options['fields']['unpublish_on']['custom_date_format'] = 'U';
   $handler->display->display_options['fields']['unpublish_on']['timezone'] = 'UTC';
+  /* Field: Ding Redia RSS: Library ID */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['id'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['field'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['element_label_colon'] = FALSE;
+  /* Field: Ding Redia RSS: Library Title */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['id'] = 'ding_redia_rss_handler_library_title';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['field'] = 'ding_redia_rss_handler_library_title';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -245,6 +257,8 @@ function ding_redia_rss_views_default_views() {
         'arrangement-location' => 'field_ding_event_location',
         'arrangement-price' => 'field_ding_event_price',
         'resources' => 'nid',
+        'library-id' => 'ding_redia_rss_handler_library_id',
+        'library-title' => 'ding_redia_rss_handler_library_title',
       ),
     ),
     'core' => array(
@@ -505,6 +519,18 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'custom';
   $handler->display->display_options['fields']['unpublish_on']['custom_date_format'] = 'U';
   $handler->display->display_options['fields']['unpublish_on']['timezone'] = 'UTC';
+  /* Field: Ding Redia RSS: Library ID */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['id'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['field'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['element_label_colon'] = FALSE;
+  /* Field: Ding Redia RSS: Library Title */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['id'] = 'ding_redia_rss_handler_library_title';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['field'] = 'ding_redia_rss_handler_library_title';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -572,6 +598,8 @@ function ding_redia_rss_views_default_views() {
         'arrangement-location' => '',
         'arrangement-price' => '',
         'resources' => 'nid',
+        'library-id' => 'ding_redia_rss_handler_library_id',
+        'library-title' => 'ding_redia_rss_handler_library_title',
       ),
     ),
     'core' => array(
