@@ -157,6 +157,10 @@ function ding_redia_rss_views_rss_item_elements() {
       'title' => t('Library title'),
       'description' => t('Title of library to which this node is assigned.'),
     ),
+    'redia-rss:place2book' => array(
+      'title' => t('Place2book link'),
+      'description' => t('Link to the place2book tickets'),
+    ),
   );
 }
 

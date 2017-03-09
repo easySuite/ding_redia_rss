@@ -190,6 +190,12 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['field'] = 'ding_redia_rss_handler_library_title';
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['label'] = '';
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_title']['element_label_colon'] = FALSE;
+  /* Field: Ding Redia RSS: Place2book Link */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_place2book']['id'] = 'ding_redia_rss_handler_place2book';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_place2book']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_place2book']['field'] = 'ding_redia_rss_handler_place2book';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_place2book']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_place2book']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -259,6 +265,7 @@ function ding_redia_rss_views_default_views() {
         'resources' => 'nid',
         'library-id' => 'ding_redia_rss_handler_library_id',
         'library-title' => 'ding_redia_rss_handler_library_title',
+        'place2book' => 'ding_redia_rss_handler_place2book',
       ),
     ),
     'core' => array(
