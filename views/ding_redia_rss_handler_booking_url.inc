@@ -23,7 +23,16 @@ class ding_redia_rss_handler_booking_url extends views_handler_field {
 
   function render($data) {
     $node = $data->_field_data['nid']['entity'];
-    $place2book = field_get_items('node', $node, 'field_place2book');
+    // As we have difference between place2book modules between revisions, we
+    // have to check if fields are existing.
+    $p2b_fields = array('field_place2book', 'field_place2book_tickets');
+    foreach ($p2b_fields as $p2b_field) {
+      $existing = field_get_items('node', $node, $p2b_field);
+      if (!empty($existing)) {
+        $place2book = $existing;
+        continue;
+      }
+    }
 
     if (!empty($place2book)) {
       $event_maker_id = $place2book[0]['event_maker_id'];
@@ -44,4 +53,5 @@ class ding_redia_rss_handler_booking_url extends views_handler_field {
 
     return $link;
   }
+
 }
