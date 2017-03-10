@@ -58,7 +58,7 @@ function ding_redia_rss_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "ding_redia_rss" ],
-      "REQUIRES" : [ "rules", "cache_actions", "flag" ],
+      "REQUIRES" : [ "cache_actions", "flag" ],
       "ON" : { "flag_flagged_mobile_app" : [], "flag_unflagged_mobile_app" : [] },
       "IF" : [
         { "node_is_of_type" : {
@@ -77,7 +77,7 @@ function ding_redia_rss_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "ding_redia_rss" ],
-      "REQUIRES" : [ "rules", "cache_actions" ],
+      "REQUIRES" : [ "cache_actions", "rules" ],
       "ON" : { "node_insert" : [], "node_update" : [], "node_delete" : [] },
       "IF" : [
         { "node_is_of_type" : {

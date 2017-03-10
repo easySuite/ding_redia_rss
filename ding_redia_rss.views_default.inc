@@ -165,6 +165,23 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['sorts']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
   $handler->display->display_options['sorts']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
   $handler->display->display_options['sorts']['field_ding_event_date_value']['field'] = 'field_ding_event_date_value';
+  /* Field: Ding Redia RSS: Library ID */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['id'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['field'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['element_label_colon'] = FALSE;
+  /* Field: Ding Redia RSS: Place2book Booking URL */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['id'] = 'ding_redia_rss_handler_booking_url';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['field'] = 'ding_redia_rss_handler_booking_url';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -239,6 +256,8 @@ function ding_redia_rss_views_default_views() {
         'arrangement-location' => 'field_ding_event_location',
         'arrangement-price' => 'field_ding_event_price',
         'resources' => 'nid',
+        'library-id' => 'ding_redia_rss_handler_library_id',
+        'booking-url' => 'ding_redia_rss_handler_booking_url',
       ),
     ),
     'core' => array(
@@ -252,6 +271,25 @@ function ding_redia_rss_views_default_views() {
         'enclosure' => '',
         'guid' => 'nid',
         'pubDate' => 'created',
+      ),
+    ),
+    'dc' => array(
+      'views_rss_dc' => array(
+        'title' => '',
+        'creator' => '',
+        'subject' => '',
+        'description' => '',
+        'publisher' => '',
+        'contributor' => '',
+        'date' => '',
+        'type' => '',
+        'format' => '',
+        'identifier' => '',
+        'source' => '',
+        'language' => '',
+        'relation' => '',
+        'coverage' => '',
+        'rights' => '',
       ),
     ),
     'media' => array(
@@ -498,6 +536,12 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'custom';
   $handler->display->display_options['fields']['unpublish_on']['custom_date_format'] = 'U';
   $handler->display->display_options['fields']['unpublish_on']['timezone'] = 'UTC';
+  /* Field: Ding Redia RSS: Library ID */
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['id'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['table'] = 'ding_redia_rss';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['field'] = 'ding_redia_rss_handler_library_id';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['label'] = '';
+  $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -571,6 +615,8 @@ function ding_redia_rss_views_default_views() {
         'arrangement-location' => '',
         'arrangement-price' => '',
         'resources' => 'nid',
+        'library-id' => 'ding_redia_rss_handler_library_id',
+        'library-title' => 'ding_redia_rss_handler_library_title',
       ),
     ),
     'core' => array(
