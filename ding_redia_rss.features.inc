@@ -20,7 +20,7 @@ function ding_redia_rss_flag_default_flags() {
   $flags['mobile_app'] = array(
     'content_type' => 'node',
     'title' => 'Mobile app',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'ding_event',
       1 => 'ding_news',
