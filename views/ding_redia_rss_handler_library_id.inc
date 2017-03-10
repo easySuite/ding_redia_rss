@@ -19,9 +19,7 @@ class ding_redia_rss_handler_library_id extends views_handler_field {
     parent::options_form($form, $form_state);
   }
 
-  function query() {
-    // do nothing -- to override the parent query.
-  }
+  function query() {}
 
   function render($data) {
     $node = $data->_field_data['nid']['entity'];

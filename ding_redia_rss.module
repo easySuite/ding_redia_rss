@@ -153,13 +153,9 @@ function ding_redia_rss_views_rss_item_elements() {
       'title' => t('Library ID'),
       'description' => t('Identificator of library to which this node is assigned.'),
     ),
-    'redia-rss:library-title' => array(
-      'title' => t('Library title'),
-      'description' => t('Title of library to which this node is assigned.'),
-    ),
-    'redia-rss:place2book' => array(
-      'title' => t('Place2book link'),
-      'description' => t('Link to the place2book tickets'),
+    'redia-rss:booking-url' => array(
+      'title' => t('Place2book Booking URL'),
+      'description' => t('Link to the place2book tickets.'),
     ),
   );
 }

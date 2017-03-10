@@ -25,21 +25,12 @@ function ding_redia_rss_views_data() {
     ),
   );
 
-  // Add library title field.
-  $data['ding_redia_rss']['ding_redia_rss_handler_library_title'] = array(
-    'title' => t('Library Title'),
-    'help' => t("Provides a node's library title."),
-    'field' => array(
-      'handler' => 'ding_redia_rss_handler_library_title',
-    ),
-  );
-
   // Add place2book field.
-  $data['ding_redia_rss']['ding_redia_rss_handler_place2book'] = array(
-    'title' => t('Place2book Link'),
-    'help' => t("Provides link to ticket on place2book."),
+  $data['ding_redia_rss']['ding_redia_rss_handler_booking_url'] = array(
+    'title' => t('Place2book Booking URL'),
+    'help' => t("Provides link to booking on place2book."),
     'field' => array(
-      'handler' => 'ding_redia_rss_handler_place2book',
+      'handler' => 'ding_redia_rss_handler_booking_url',
     ),
   );
 

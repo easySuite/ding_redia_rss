@@ -8,7 +8,7 @@
 /**
  * Class ding_redia_rss_handler_place2book.
  */
-class ding_redia_rss_handler_place2book extends views_handler_field {
+class ding_redia_rss_handler_booking_url extends views_handler_field {
 
   function option_definition() {
     $options = parent::option_definition();
@@ -19,9 +19,7 @@ class ding_redia_rss_handler_place2book extends views_handler_field {
     parent::options_form($form, $form_state);
   }
 
-  function query() {
-    // do nothing -- to override the parent query.
-  }
+  function query() {}
 
   function render($data) {
     $node = $data->_field_data['nid']['entity'];
@@ -35,7 +33,9 @@ class ding_redia_rss_handler_place2book extends views_handler_field {
         $p2b = ding_place2book_instance();
         $event = $p2b->getEvent($event_maker_id, $event_id);
 
-        $link = $event->links->sales_location;
+        if ($event->meta_data->sales_status == 'open') {
+          $link = $event->links->sales_location;
+        }
       }
       catch (Exception $e) {
         watchdog_exception('ding_place2book', $e);
