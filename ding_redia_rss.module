@@ -149,6 +149,14 @@ function ding_redia_rss_views_rss_item_elements() {
       'description' => t('The node id of a type which has a relation to ting objects.'),
       'preprocess functions' => array('ding_redia_rss_preprocess_item_resources'),
     ),
+    'redia-rss:library-id' => array(
+      'title' => t('Library ID'),
+      'description' => t('Identificator of library to which this node is assigned.'),
+    ),
+    'redia-rss:booking-url' => array(
+      'title' => t('Place2book Booking URL'),
+      'description' => t('Link to the place2book tickets.'),
+    ),
   );
 }
 
@@ -169,7 +177,7 @@ function ding_redia_rss_preprocess_item_resources(&$variables) {
       // Redia format.
       $id_parts = explode(':', $ting_object->id);
       $faust_number = end($id_parts);
-      
+
       $value[] = array(
         // This must be the name of the tag wrapping each value.
         'key' => 'redia-rss:resource',
