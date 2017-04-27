@@ -1,8 +1,8 @@
 name = Ding Redia RSS
 description = Ding Redia RSS feeds
 core = 7.x
-package = Ding!
-version = 7.x-0.2
+package = easyOPAC
+version = 7.x-3.0.2
 project = ding_redia_rss
 dependencies[] = cache_actions
 dependencies[] = ctools
