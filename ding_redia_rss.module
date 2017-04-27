@@ -53,17 +53,39 @@ function ding_redia_rss_field_formatter_view($entity_type, $entity, $field, $ins
     case 'ding_redia_rss_date_time':
       foreach ($items as $delta => $item) {
         $element[$delta] = array(
-          '#markup' => strtotime($item[$display['settings']['fromto']]),
+          '#markup' => strtotime($item[$display['settings']['fromto']] . ' ' . $item['timezone_db']),
         );
       }
       break;
+
     case 'ding_redia_rss_location':
       foreach ($items as $delta => $item) {
-        foreach ($item as $part) {
-          if (!empty($part)) {
-            $location[] = $part;
+        $location = array();
+        if (!empty($item['name_line'])) {
+          foreach ($item as $part) {
+            if (!empty($part)) {
+              $location[] = $part;
+            }
           }
         }
+        else {
+          // Try to get library title as location.
+          $wrapper = entity_metadata_wrapper('node', $entity);
+          $libraries = $wrapper->og_group_ref->value();
+          foreach ($libraries as $library) {
+            $location[] = $library->title;
+          }
+        }
+
+        // Fallback to groups title for location.
+        if (count($location) == 0) {
+          $wrapper = entity_metadata_wrapper('node', $entity);
+          $groups = $wrapper->ding_event_groups_ref->value();
+          foreach ($groups as $group) {
+            $location[] = $group->title;
+          }
+        }
+
         $element[$delta] = array(
           '#markup' => implode(', ', array_reverse($location)),
         );
@@ -149,6 +171,14 @@ function ding_redia_rss_views_rss_item_elements() {
       'description' => t('The node id of a type which has a relation to ting objects.'),
       'preprocess functions' => array('ding_redia_rss_preprocess_item_resources'),
     ),
+    'redia-rss:library-id' => array(
+      'title' => t('Library ID'),
+      'description' => t('Identificator of library to which this node is assigned.'),
+    ),
+    'redia-rss:booking-url' => array(
+      'title' => t('Place2book Booking URL'),
+      'description' => t('Link to the place2book tickets.'),
+    ),
   );
 }
 
@@ -169,7 +199,7 @@ function ding_redia_rss_preprocess_item_resources(&$variables) {
       // Redia format.
       $id_parts = explode(':', $ting_object->id);
       $faust_number = end($id_parts);
-      
+
       $value[] = array(
         // This must be the name of the tag wrapping each value.
         'key' => 'redia-rss:resource',
