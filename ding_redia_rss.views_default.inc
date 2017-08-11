@@ -161,10 +161,6 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['field_ding_event_list_image_1']['settings'] = array(
     'image_style' => 'medium',
   );
-  /* Sort criterion: Content: Date -  start date (field_ding_event_date) */
-  $handler->display->display_options['sorts']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
-  $handler->display->display_options['sorts']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
-  $handler->display->display_options['sorts']['field_ding_event_date_value']['field'] = 'field_ding_event_date_value';
   /* Field: Ding Redia RSS: Library ID */
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['id'] = 'ding_redia_rss_handler_library_id';
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['table'] = 'ding_redia_rss';
@@ -177,6 +173,18 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['field'] = 'ding_redia_rss_handler_booking_url';
   $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['label'] = '';
   $handler->display->display_options['fields']['ding_redia_rss_handler_booking_url']['element_label_colon'] = FALSE;
+  /* Field: Content: Promoted to front page */
+  $handler->display->display_options['fields']['promote']['id'] = 'promote';
+  $handler->display->display_options['fields']['promote']['table'] = 'node';
+  $handler->display->display_options['fields']['promote']['field'] = 'promote';
+  $handler->display->display_options['fields']['promote']['label'] = '';
+  $handler->display->display_options['fields']['promote']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['promote']['type'] = 'true-false';
+  $handler->display->display_options['fields']['promote']['not'] = 0;
+  /* Sort criterion: Content: Date -  start date (field_ding_event_date) */
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
+  $handler->display->display_options['sorts']['field_ding_event_date_value']['field'] = 'field_ding_event_date_value';
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -258,6 +266,7 @@ function ding_redia_rss_views_default_views() {
         'resources' => 'nid',
         'library-id' => 'ding_redia_rss_handler_library_id',
         'booking-url' => 'ding_redia_rss_handler_booking_url',
+        'promoted' => 'promote',
       ),
     ),
     'core' => array(
@@ -542,6 +551,14 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['field'] = 'ding_redia_rss_handler_library_id';
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['label'] = '';
   $handler->display->display_options['fields']['ding_redia_rss_handler_library_id']['element_label_colon'] = FALSE;
+  /* Field: Content: Promoted to front page */
+  $handler->display->display_options['fields']['promote']['id'] = 'promote';
+  $handler->display->display_options['fields']['promote']['table'] = 'node';
+  $handler->display->display_options['fields']['promote']['field'] = 'promote';
+  $handler->display->display_options['fields']['promote']['label'] = '';
+  $handler->display->display_options['fields']['promote']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['promote']['type'] = 'true-false';
+  $handler->display->display_options['fields']['promote']['not'] = 0;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -617,6 +634,7 @@ function ding_redia_rss_views_default_views() {
         'resources' => 'nid',
         'library-id' => 'ding_redia_rss_handler_library_id',
         'library-title' => 'ding_redia_rss_handler_library_title',
+        'promoted' => 'promote',
       ),
     ),
     'core' => array(
