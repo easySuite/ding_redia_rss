@@ -61,6 +61,11 @@ class ding_redia_rss_handler_booking_url extends views_handler_field {
           return;
         }
 
+        // Check cache for the URL.
+        if ($cache = cache_get($place2book_id . '_' . $library_id, 'cache_place2book')) {
+          return $cache->data;
+        };
+
         // @todo: Move http requests to a shared function responsible for setting
         // the correct headers. These bits seem to be repeated often - even with
         // variation. This could also include error handling.
