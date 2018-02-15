@@ -181,6 +181,14 @@ function ding_redia_rss_views_default_views() {
   $handler->display->display_options['fields']['promote']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['promote']['type'] = 'true-false';
   $handler->display->display_options['fields']['promote']['not'] = 0;
+  /* Felt: Content: Event organizer */
+  $handler->display->display_options['fields']['field_ding_event_organizer']['id'] = 'field_ding_event_organizer';
+  $handler->display->display_options['fields']['field_ding_event_organizer']['table'] = 'field_data_field_ding_event_organizer';
+  $handler->display->display_options['fields']['field_ding_event_organizer']['field'] = 'field_ding_event_organizer';
+  $handler->display->display_options['fields']['field_ding_event_organizer']['label'] = '';
+  $handler->display->display_options['fields']['field_ding_event_organizer']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ding_event_organizer']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_ding_event_organizer']['delta_offset'] = '0';
   /* Sort criterion: Content: Date -  start date (field_ding_event_date) */
   $handler->display->display_options['sorts']['field_ding_event_date_value']['id'] = 'field_ding_event_date_value';
   $handler->display->display_options['sorts']['field_ding_event_date_value']['table'] = 'field_data_field_ding_event_date';
@@ -254,21 +262,6 @@ function ding_redia_rss_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['item'] = array(
-    'redia-rss' => array(
-      'ding_redia_rss' => array(
-        'subheadline' => 'field_ding_event_lead',
-        'arrangement-starttime' => 'field_ding_event_date',
-        'arrangement-endtime' => 'field_ding_event_date_1',
-        'display-starttime' => '',
-        'display-endtime' => '',
-        'arrangement-location' => 'field_ding_event_location',
-        'arrangement-price' => 'field_ding_event_price',
-        'resources' => 'nid',
-        'library-id' => 'ding_redia_rss_handler_library_id',
-        'booking-url' => 'ding_redia_rss_handler_booking_url',
-        'promoted' => 'promote',
-      ),
-    ),
     'core' => array(
       'views_rss_core' => array(
         'title' => 'title',
@@ -282,25 +275,6 @@ function ding_redia_rss_views_default_views() {
         'pubDate' => 'created',
       ),
     ),
-    'dc' => array(
-      'views_rss_dc' => array(
-        'title' => '',
-        'creator' => '',
-        'subject' => '',
-        'description' => '',
-        'publisher' => '',
-        'contributor' => '',
-        'date' => '',
-        'type' => '',
-        'format' => '',
-        'identifier' => '',
-        'source' => '',
-        'language' => '',
-        'relation' => '',
-        'coverage' => '',
-        'rights' => '',
-      ),
-    ),
     'media' => array(
       'views_rss_media' => array(
         'content' => 'field_ding_event_list_image',
@@ -309,6 +283,22 @@ function ding_redia_rss_views_default_views() {
         'keywords' => '',
         'thumbnail' => 'field_ding_event_list_image_1',
         'category' => '',
+      ),
+    ),
+    'redia-rss' => array(
+      'ding_redia_rss' => array(
+        'subheadline' => 'field_ding_event_lead',
+        'arrangement-starttime' => 'field_ding_event_date',
+        'arrangement-endtime' => 'field_ding_event_date_1',
+        'display-starttime' => '',
+        'display-endtime' => '',
+        'arrangement-location' => 'field_ding_event_location',
+        'arrangement-price' => 'field_ding_event_price',
+        'resources' => 'nid',
+        'library-id' => 'ding_redia_rss_handler_library_id',
+        'booking-url' => 'ding_redia_rss_handler_booking_url',
+        'organizers' => 'field_ding_event_organizer',
+        'promoted' => 'promote',
       ),
     ),
   );
