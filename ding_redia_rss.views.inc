@@ -25,14 +25,5 @@ function ding_redia_rss_views_data() {
     ),
   );
 
-  // Add place2book field.
-  $data['ding_redia_rss']['ding_redia_rss_handler_booking_url'] = array(
-    'title' => t('Place2book Booking URL'),
-    'help' => t("Provides link to booking on place2book."),
-    'field' => array(
-      'handler' => 'ding_redia_rss_handler_booking_url',
-    ),
-  );
-
   return $data;
 }
