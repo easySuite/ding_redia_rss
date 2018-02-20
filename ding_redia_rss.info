@@ -22,5 +22,4 @@ features[rules_config][] = rules_ding_redia_rss_news_update_cache_clear
 features[views_view][] = ding_redia_event_rss
 features[views_view][] = ding_redia_news_rss
 files[] = views/ding_redia_rss_handler_library_id.inc
-files[] = views/ding_redia_rss_handler_booking_url.inc
-mtime = 1499174588
+mtime = 1518683663

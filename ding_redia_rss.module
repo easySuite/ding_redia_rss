@@ -179,6 +179,10 @@ function ding_redia_rss_views_rss_item_elements() {
       'title' => t('Place2book Booking URL'),
       'description' => t('Link to the place2book tickets.'),
     ),
+    'redia-rss:organizers' => array(
+      'title' => t('Event organizers'),
+      'description' => t('The event organizers.'),
+    ),
     'redia-rss:promoted' => array(
       'title' => t('Promoted to front page'),
       'description' => t('Boolean value for promoted to front page.'),
